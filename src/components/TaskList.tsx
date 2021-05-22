@@ -22,7 +22,7 @@ export function TaskList() {
         id: Math.floor(Math.random() * 1000) + 1,
         title: newTaskTitle,
         isComplete: false
-      }])
+      }]);
     }
   }
 
@@ -38,6 +38,8 @@ export function TaskList() {
 
   function handleRemoveTask(id: number) {
     // Remova uma task da listagem pelo ID
+    const newTasksArray = tasks.filter(task => task.id !== id);
+    setTasks(newTasksArray);
   }
 
   return (
